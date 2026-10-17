@@ -1,0 +1,111 @@
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: var(--s3); }
+.brand { display: flex; align-items: center; gap: 8px; font-weight: 700; letter-spacing: .14em; font-size: 15px; }
+.brand i { width: 12px; height: 12px; border-radius: 3px; background: var(--accent); }
+
+.page-head h1, .title-row h1 { font-size: 30px; font-weight: 600; line-height: 1.1; letter-spacing: -.01em; }
+.page-head { display: flex; flex-direction: column; gap: 2px; }
+
+/* Hero (Home) and banner (Race detail) */
+.hero, .banner { display: block; overflow: hidden; border-radius: var(--r-xl); }
+.hero__strip { height: 14px; background: repeating-conic-gradient(var(--fg) 0 25%, var(--card) 0 50%) 0 0 / 14px 14px; }
+.scene { background: color-mix(in srgb, var(--c-blue) 28%, var(--card)); line-height: 0; }
+.scene > svg { display: block; width: 100%; height: auto; }
+.hero__body { padding: var(--s5); display: flex; flex-direction: column; gap: var(--s4); }
+.hero__head { display: flex; justify-content: space-between; align-items: flex-start; gap: var(--s3); }
+.hero__text { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.hero__split { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--s3); align-items: center; }
+.hero__info { display: flex; flex-direction: column; gap: var(--s4); min-width: 0; }
+.hero__where { font-size: 12px; font-weight: 500; }
+.hero__count .eyebrow { font-size: 10px; }
+.hero__count { display: flex; flex-direction: column; gap: 6px; }
+.hero__track { width: 130px; }
+.hero__track .track { max-height: none; }
+.hero__track .track__road { stroke-width: 3; }
+.hero__track .track__start { stroke-width: 2.6; }
+.hero__title { font-size: 28px; font-weight: 600; line-height: 1.05; letter-spacing: -.01em; text-wrap: balance; }
+
+.cd { display: flex; gap: 18px; }
+.cd div { display: flex; flex-direction: column; gap: 2px; }
+.cd b { font-size: 28px; font-weight: 600; line-height: 1; letter-spacing: -.01em; }
+.cd span { font-size: 11px; letter-spacing: .1em; color: var(--fg3); }
+
+.tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.tile { display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; border-radius: var(--r-lg); background: var(--rtint, color-mix(in srgb, var(--c) 12%, var(--card))); min-width: 0; }
+.tile .eyebrow { color: var(--rtone, var(--accent-text)); }
+.tile--race { background: var(--raised); }
+.tile--done { opacity: .6; }
+.tile__time { font-size: 22px; font-weight: 600; line-height: 1.1; }
+.tile__day { font-size: 14px; color: var(--fg2); }
+
+/* Standings */
+.slist { border-top: 1px solid var(--line); }
+.srow { display: grid; grid-template-columns: 22px 44px minmax(0, 1fr) 56px; gap: var(--s3); align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.srow__pos { text-align: right; color: var(--fg3); font-weight: 500; }
+.srow__title { font-size: 16px; line-height: 1.2; }
+.srow__title b { font-weight: 600; }
+.srow__sub { font-size: 12px; color: var(--fg3); }
+.srow__pts { text-align: right; display: flex; flex-direction: column; }
+.srow__pts b { font-size: 20px; font-weight: 600; }
+.srow__pts span { font-size: 11px; color: var(--fg3); }
+
+/* Calendar */
+.stack { display: flex; flex-direction: column; gap: 10px; }
+.race-card { display: flex; align-items: center; gap: 14px; padding: 12px; background: var(--card); border: 1px solid var(--line); border-radius: var(--r-lg); }
+.race-card__text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+.race-card__name { font-size: 17px; font-weight: 600; line-height: 1.2; }
+.race-card__meta { font-size: 13px; color: var(--fg2); }
+
+/* Race detail */
+.title-row { display: flex; justify-content: space-between; align-items: flex-start; gap: var(--s3); }
+.title-row__text { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.sessions { overflow: hidden; }
+.session { display: flex; justify-content: space-between; align-items: center; padding: 16px; }
+.session + .session { border-top: 1px solid var(--line); }
+.session > div { display: flex; flex-direction: column; gap: 1px; }
+.session__name { font-size: 17px; font-weight: 600; }
+.session__time { align-items: flex-end; }
+.session__time b { font-size: 26px; font-weight: 600; line-height: 1.1; }
+.session--done { opacity: .6; }
+.facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.fact { display: flex; flex-direction: column; padding: 12px; border-radius: 14px; }
+.fact b { font-size: 21px; font-weight: 600; }
+
+/* Calendar: one-time alerts card */
+.alerts { position: relative; display: flex; flex-direction: column; gap: var(--s3); padding: var(--s4); }
+.alerts__close { position: absolute; top: 6px; right: 6px; width: 40px; height: 40px; display: grid; place-items: center; border: 0; background: none; color: var(--fg3); cursor: pointer; border-radius: 999px; }
+.alerts__close .ico { width: 16px; height: 16px; }
+.alerts__restore { align-self: center; background: none; border: 0; font: inherit; font-size: 14px; cursor: pointer; padding: var(--s2); }
+.alerts__head { display: flex; gap: var(--s3); align-items: flex-start; }
+.alerts__icon { flex: none; width: 44px; height: 44px; display: grid; place-items: center; border-radius: var(--r-md); background: var(--tint); color: var(--accent-strong); }
+.alerts__icon .ico { width: 24px; height: 24px; }
+.alerts__text { display: flex; flex-direction: column; gap: 3px; min-width: 0; padding-right: 20px; }
+.alerts__text h2 { font-size: 17px; font-weight: 600; }
+.alerts__help summary { cursor: pointer; font-weight: 500; font-size: 14px; color: var(--fg2); }
+.alerts__help .steps { list-style: decimal; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; color: var(--fg2); margin-top: var(--s3); }
+
+/* Race result */
+.podium { display: grid; grid-template-columns: repeat(3, 1fr); align-items: end; gap: 8px; }
+.pcol { display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 0; text-align: center; }
+.pcol__name { font-weight: 600; font-size: 16px; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pcol__step { width: 100%; display: flex; justify-content: center; align-items: flex-start; padding-top: 10px; border-radius: 12px 12px 0 0; background: color-mix(in srgb, var(--tc) 38%, var(--card)); font-size: 26px; font-weight: 600; }
+.pcol__step--win { background: var(--accent); color: #fff; }
+.rrow { display: grid; grid-template-columns: 22px 44px minmax(0, 1fr) auto; gap: var(--s3); align-items: center; padding: 10px 14px; }
+.rrow + .rrow { border-top: 1px solid var(--line); }
+.rrow__who { display: flex; flex-direction: column; min-width: 0; line-height: 1.2; }
+.rrow__who b { font-weight: 600; }
+.rrow__res { text-align: right; font-size: 14px; display: flex; flex-direction: column; }
+
+/* Race banner map */
+.banner { background: var(--rbg, var(--raised)); line-height: 0; }
+.map { display: block; width: 100%; height: auto; aspect-ratio: 328 / 120; }
+.map__land { fill: color-mix(in srgb, var(--ron, #fff) 10%, var(--rbg, var(--raised))); stroke: var(--rbg, var(--raised)); stroke-width: 1; }
+.map__host { fill: var(--ron, var(--card)); fill-opacity: .92; stroke: var(--rbg, var(--raised)); stroke-width: 1; }
+.map__pin { fill: var(--rpin, var(--accent)); stroke: var(--rbg, var(--raised)); stroke-width: 2; }
+
+/* Circuit layout */
+.track-card { display: flex; flex-direction: column; gap: var(--s3); padding: var(--s4); }
+.track { display: block; width: 100%; max-height: 190px; }
+.track__road { fill: none; stroke: var(--rtone, var(--line-strong)); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.track__start { stroke: var(--accent); stroke-width: 1.4; }
+.track-key { display: flex; align-items: center; gap: var(--s2); }
+.track-key::before { content: ''; width: 3.5px; height: 12px; background: var(--accent); }
