@@ -1,0 +1,12 @@
+/* Colour classes used inside the SVG sketches in assets/art.js */
+.sk { stroke: var(--fg); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.art .sk { stroke-width: 2; }
+.fr { fill: var(--c-red); } .fy { fill: var(--c-yellow); } .fb { fill: var(--c-blue); }
+.fc { fill: var(--c); } .fc2 { fill: var(--c2); }
+.fw { fill: var(--card); } .fk { fill: var(--wheel); } .ff { fill: var(--fg); }
+.nf { fill: none; }
+
+/* UI icons */
+.ico { width: 20px; height: 20px; flex: none; }
+.ico--muted { color: var(--fg3); }
+.icon { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
