@@ -24,6 +24,17 @@ export function raceCard(race, { now, isNext = false, past = false, href }) {
   </a>`;
 }
 
+/** Slim row for an earlier round with no art or detail page: round, name, date and place. */
+export function compactRow(race) {
+  return `<div class="crow">
+    <span class="crow__n">${race.round}</span>
+    <span class="crow__text">
+      <span class="crow__name">${esc(race.name)}</span>
+      <span class="crow__meta">${formatInstant(race.race).day}  ·  ${esc(race.place)}</span>
+    </span>
+  </div>`;
+}
+
 /** Row in the "Later this season" list on Home: race art, round, name, date and days to go. */
 export function raceListRow(race, now = Date.now()) {
   const badge = dateBadge(race.race);

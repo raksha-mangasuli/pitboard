@@ -47,6 +47,13 @@
 .srow__pts { text-align: right; display: flex; flex-direction: column; }
 .srow__pts b { font-size: 20px; font-weight: 600; }
 .srow__pts span { font-size: 11px; color: var(--fg3); }
+.srow--idle { opacity: .55; }
+
+/* Group headers on the drivers list: "Racing now", "Not racing now" */
+.sgroup { display: flex; align-items: baseline; gap: var(--s2); padding: 14px 4px 8px; }
+.sgroup + .slist + .sgroup { padding-top: var(--s6); }
+.sgroup b { font-size: 12px; font-weight: 500; }
+.sgroup span, .sgroup em { font-size: 11px; font-style: normal; color: var(--fg3); }
 
 /* Calendar */
 .stack { display: flex; flex-direction: column; gap: 10px; }
@@ -54,6 +61,14 @@
 .race-card__text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px; }
 .race-card__name { font-size: 17px; font-weight: 600; line-height: 1.2; }
 .race-card__meta { font-size: 13px; color: var(--fg2); }
+
+/* Slim rows for earlier rounds on the Calendar Past tab */
+.crow { display: flex; align-items: center; gap: var(--s3); padding: 10px 14px; }
+.crow + .crow { border-top: 1px solid var(--line); }
+.crow__n { flex: none; width: 22px; text-align: right; color: var(--fg3); font-weight: 500; }
+.crow__text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+.crow__name { font-size: 14px; font-weight: 500; line-height: 18px; }
+.crow__meta { font-size: 11px; line-height: 14px; color: var(--fg2); }
 
 /* Race detail */
 .title-row { display: flex; justify-content: space-between; align-items: flex-start; gap: var(--s3); }

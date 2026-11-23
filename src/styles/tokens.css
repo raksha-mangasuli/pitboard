@@ -13,6 +13,8 @@
   --accent-text: #A8411F;
   --accent-strong: #B34620;
   --wheel: #3A3733;
+  --warn: #B07A2B;
+  --bad: #B0403A;
 
   /* Race and team colours (soft, readable on light) */
   --c-red: #F26B4E; --c-yellow: #F6C945; --c-blue: #5BAEE8; --c-mint: #62C4A3;
@@ -45,6 +47,7 @@
     --line: #222831; --line-strong: #333B46;
     --fg: #CDD3DB; --fg2: #79808C; --fg3: #646B77;
     --accent: #DD6A4E; --accent-text: #E3907A; --accent-strong: #B34620; --wheel: #0E1116;
+    --warn: #D9AE3C; --bad: #E0654A;
     --c-red: #E0654A; --c-yellow: #D9AE3C; --c-blue: #4E8FC4; --c-mint: #4CA588;
     --c-pink: #CE7494; --c-lilac: #8579C9; --c-orange: #D98B3E;
     --c-green: #6AA85A; --c-teal: #3C9AA9; --c-slate: #7783A0; --c-gray: #7B818C;
@@ -62,6 +65,7 @@
   --line: #222831; --line-strong: #333B46;
   --fg: #CDD3DB; --fg2: #79808C; --fg3: #646B77;
   --accent: #DD6A4E; --accent-text: #E3907A; --accent-strong: #B34620; --wheel: #0E1116;
+  --warn: #D9AE3C; --bad: #E0654A;
   --c-red: #E0654A; --c-yellow: #D9AE3C; --c-blue: #4E8FC4; --c-mint: #4CA588;
   --c-pink: #CE7494; --c-lilac: #8579C9; --c-orange: #D98B3E;
   --c-green: #6AA85A; --c-teal: #3C9AA9; --c-slate: #7783A0; --c-gray: #7B818C;

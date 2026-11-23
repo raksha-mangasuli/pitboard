@@ -23,6 +23,17 @@
 .seg button { min-height: 40px; border: 0; border-radius: 9px; background: transparent; color: var(--fg2); font-weight: 500; font-size: 15px; cursor: pointer; }
 .seg button[aria-pressed="true"] { background: var(--card); color: var(--fg); box-shadow: 0 0 0 1px var(--line); }
 
+/* Data status banner (loading, could not refresh, no live data) */
+.notice { display: flex; align-items: center; gap: var(--s3); padding: 12px 14px; border-radius: var(--r-md); border: 1px solid var(--line); background: var(--raised); }
+.notice--stale { --nc: var(--warn); background: color-mix(in srgb, var(--warn) 14%, var(--bg)); }
+.notice--offline { --nc: var(--bad); background: color-mix(in srgb, var(--bad) 10%, var(--bg)); }
+.notice--loading { --nc: var(--fg2); }
+.notice__icon { flex: none; width: 20px; height: 20px; fill: none; stroke: var(--nc); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.notice__text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.notice__text b { font-size: 12px; font-weight: 500; line-height: 16px; }
+.notice__text span { font-size: 11px; line-height: 14px; color: var(--fg2); }
+.notice__action { flex: none; min-height: 40px; padding: 0 var(--s1); border: 0; background: none; color: var(--accent-text); font: inherit; font-size: 12px; font-weight: 500; cursor: pointer; }
+
 .tag { display: grid; place-items: center; height: 30px; min-width: 44px; padding-inline: 6px; border-radius: var(--r-sm); background: var(--tc, var(--c-gray)); color: var(--on-c); font-size: 12px; font-weight: 700; letter-spacing: .06em; }
 
 .art { display: grid; place-items: center; flex: none; background: var(--rtint, color-mix(in srgb, var(--c, var(--accent)) 26%, var(--card))); }

@@ -1,11 +1,11 @@
-import { API_BASE, FETCH_TIMEOUT_MS } from '../config.js';
+import { API_BASE, FETCH_TIMEOUT_MS, RETRY_DELAY_MS } from '../config.js';
 
 /** GET a Jolpica (Ergast-compatible) endpoint with a timeout. */
-export async function fetchJson(path) {
+export async function fetchJson(path, base = API_BASE) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
   try {
-    const res = await fetch(API_BASE + path, { signal: controller.signal });
+    const res = await fetch(base + path, { signal: controller.signal });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return await res.json();
   } finally {
@@ -13,7 +13,17 @@ export async function fetchJson(path) {
   }
 }
 
-const codeOf = (driver) => driver.code || String(driver.familyName).slice(0, 3).toUpperCase();
+/** Like fetchJson, but tries once more after a short pause if the first attempt fails. */
+export async function fetchJsonWithRetry(path) {
+  try {
+    return await fetchJson(path);
+  } catch {
+    await new Promise((resolve) => setTimeout(resolve, RETRY_DELAY_MS));
+    return fetchJson(path);
+  }
+}
+
+const codeOf =(driver) => driver.code || String(driver.familyName).slice(0, 3).toUpperCase();
 
 export function parseDrivers(json) {
   const list = json.MRData.StandingsTable.StandingsLists[0];

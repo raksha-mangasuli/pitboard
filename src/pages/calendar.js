@@ -2,7 +2,8 @@ import { RACES, nextRaceIndex } from '../data/races.js';
 import { SEASON_LABEL } from '../config.js';
 import { pageHeader } from '../components/pageHeader.js';
 import { segmented, onSegment } from '../components/segmented.js';
-import { raceCard } from '../components/raceRow.js';
+import { raceCard, compactRow } from '../components/raceRow.js';
+import { EARLIER_RACES } from '../data/earlier.js';
 import { icon } from '../assets/art.js';
 import { getState } from '../services/store.js';
 
@@ -44,6 +45,13 @@ function alertsCard(count) {
   </section>`;
 }
 
+/** Rounds without art, newest first, as slim rows in one card (Past tab). */
+function earlierMarkup() {
+  const rows = EARLIER_RACES.slice().reverse().map(compactRow).join('');
+  return `<div class="sgroup"><b>Earlier this season</b><span>${EARLIER_RACES.length}</span></div>
+    <div class="card list">${rows}</div>`;
+}
+
 export function calendarPage() {
   const el = document.createElement('div');
   el.className = 'page';
@@ -61,6 +69,7 @@ export function calendarPage() {
     el.innerHTML = `${pageHeader('Calendar', `${SEASON_LABEL} season · ${upcoming.length} ${upcoming.length === 1 ? 'race' : 'races'} left`)}
       ${segmented([{ id: 'upcoming', label: 'Upcoming' }, { id: 'past', label: 'Past' }], tab, 'Calendar filter')}
       <div class="stack">${cards.join('') || '<p class="muted">Nothing here yet.</p>'}</div>
+      ${tab === 'past' ? earlierMarkup() : ''}
       ${tab === 'upcoming' && upcoming.length
         ? (alertsHidden() ? '<button type="button" class="link alerts__restore" data-restore>Show calendar alerts</button>' : alertsCard(upcoming.length))
         : ''}`;
